@@ -2,9 +2,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
-import image from "../../assets/images/img/Rectangle 40.png";
+import image from "../../assets/images/img/Ellipse 7.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Feedback = () => {
+  useEffect(() => {
+    AOS.init();
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
   return (
     <div
       className="mt-[90px] bg-no-repeat container mx-auto rounded-3xl "
@@ -14,7 +24,12 @@ const Feedback = () => {
         <h1 className="font-bold text-[32px] text-center lg:pt-10 md:pt-5">
           Patient Feedback
         </h1>
-        <div className="lg:w-2/3 mx-auto">
+        <div
+          className="lg:w-2/3 mx-auto "
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+        >
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
             <SwiperSlide>
               <div className="w-2/3 mx-auto mt-4 lg:flex gap-4">

@@ -6,10 +6,20 @@ import img1 from "../../assets/images/img/Rectangle 13.png";
 import img2 from "../../assets/images/img/Rectangle 108.png";
 import img3 from "../../assets/images/img/Rectangle 108 (1).png";
 import { FaRegBookmark } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Experts = () => {
+  useEffect(() => {
+    AOS.init();
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
   return (
-    <div className="mt-[120px]">
+    <div className="mt-[120px]" data-aos="fade-up" data-aos-duration="3000">
       <div>
         <div className="text-center">
           <h2 className="font-bold text-[40px]">Our Medical Experts</h2>

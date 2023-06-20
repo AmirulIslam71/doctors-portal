@@ -1,14 +1,30 @@
 import image2 from "../../assets/images/img/sick.png";
 import dot from "../../assets/images/icon/Dot Grid (1).png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Schedule = () => {
+  useEffect(() => {
+    AOS.init();
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
   return (
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2 mt-32">
       <div className="w-10/12 mx-auto">
         <h2 className="text-[#273240] font-bold text-3xl mb-10 text-center">
           Doctor’s Schedule Today
         </h2>
-        <div className="divide-y-2 space-y-16">
+        <div
+          className="divide-y-2 space-y-16 "
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="300"
+          data-aos-offset="0"
+        >
           <div className="flex justify-between items-center pt-4">
             <p className="text-[#EA5262] text-[28px]">08:00</p>
             <div>
@@ -46,7 +62,12 @@ const Schedule = () => {
           </div>
         </div>
       </div>
-      <div className="lg:mx-auto relative lg:mt-2 mt-40">
+      <div
+        className="lg:mx-auto relative lg:mt-2 mt-40"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <div className="bg-[#0089BA] lg:w-[466px] h-[746px] rounded-tl-[20px] rounded-tr-[80px] rounded-br-[20px] rounded-bl-[20px]"></div>
         <img
           src={image2}

@@ -2,14 +2,24 @@ import dot1 from "../../assets/images/icon/Dot Grid.png";
 import image1 from "../../assets/images/img/image1.png";
 import image2 from "../../assets/images/img/image2.png";
 import banner from "../../assets/images/icon/Group 17.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
   return (
     <div
       className="bg-no-repeat mt-16"
       style={{ backgroundImage: `url('${banner}')` }}
     >
-      <div className="">
+      <div className="" data-aos="zoom-in" data-aos-delay="5000">
         <div className=" grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="">
             <div className="ml-36">

@@ -1,6 +1,17 @@
-import image from "../../assets/images/img/Rectangle 26 (1).png";
+import image from "../../assets/images/img/Rectangle 42.png";
+import image1 from "../../assets/images/img/Rectangle 42 (1).png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Events = () => {
+  useEffect(() => {
+    AOS.init();
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
   return (
     <div className="mt-[90px] container mx-auto mb-[118px]">
       <div className="text-center mb-[70px]">
@@ -11,12 +22,18 @@ const Events = () => {
           ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <div>
+      <div data-aos="zoom-in" data-aos-delay="5000">
         <div className="lg:flex border-2">
-          <div className="lg:w-2/5 md:w-2/5">
-            <img src={image} alt="" className="w-full h-full" />
+          <div className="lg:w-2/5 relative">
+            <img src={image} alt="" className="w-full h-[551px]" />
+            <div className="w-[138px] h-[121px] bg-[#6E27E0] opacity-60 text-white top-4 right-4 absolute">
+              <p className="text-center mt-7">
+                12 <br />
+                DEC, 2022
+              </p>
+            </div>
           </div>
-          <div className="lg:w-3/5 md:w-3/5 p-8">
+          <div className="lg:w-3/5 lg:p-16 ">
             <h2 className="font-semibold text-[28px]">
               How to lead a good healthy life
             </h2>
@@ -45,7 +62,7 @@ const Events = () => {
         </div>
         <div className="mt-[40px] mb-4">
           <div className="lg:flex border-2">
-            <div className="lg:w-3/5 md:w-3/5 p-8">
+            <div className="lg:w-3/5 lg:p-16">
               <h2 className="font-semibold text-[28px]">
                 How to lead a good healthy life
               </h2>
@@ -71,8 +88,14 @@ const Events = () => {
                 </button>
               </div>
             </div>
-            <div className="lg:w-2/5 md:w-2/5">
-              <img src={image} alt="" className="w-full h-full" />
+            <div className="lg:w-2/5 relative">
+              <img src={image1} alt="" className="w-full h-[551px]" />
+              <div className="w-[138px] h-[121px] bg-[#6E27E0] opacity-60 text-white top-4 right-4 absolute">
+                <p className="text-center mt-7">
+                  12 <br />
+                  DEC, 2022
+                </p>
+              </div>
             </div>
           </div>
         </div>

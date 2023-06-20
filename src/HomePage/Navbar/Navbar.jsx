@@ -1,8 +1,17 @@
 import logo from "../../assets/images/icon/Logo.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Navbar = () => {
+  useEffect(() => {
+    AOS.init();
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
   return (
-    <div className="bg-[#273240]">
+    <div className="bg-[#273240] " data-aos="fade-up " data-aos-delay="500">
       <div className="navbar lg:container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
